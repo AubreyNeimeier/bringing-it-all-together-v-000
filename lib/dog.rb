@@ -80,8 +80,7 @@ attr_accessor :name, :breed, :id
       result = DB[:conn].execute(sql, attr_hash[:name], attr_hash[:breed])
       #binding.pry
       if !result.empty?
-        new_dog_hash = new_from_db(result)
-        new_dog_obj = Dog.new(new_dog_hash)
+        new_from_db(result)
       else
         new_dog_obj = self.create(attr_hash)
       end
