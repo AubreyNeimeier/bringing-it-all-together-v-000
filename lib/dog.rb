@@ -82,7 +82,7 @@ attr_accessor :name, :breed, :id
       if !result.empty?
         dog = new_from_db(result)
       else
-        dog = new_dog_obj = self.create(attr_hash)
+        dog = self.create(attr_hash)
       end
       dog
     end
