@@ -70,7 +70,7 @@ attr_accessor :name, :breed, :id
       new_dog = Dog.new(new_dog_hash)
     end
 
-    def new_from_db(attr_hash)
+    def self.new_from_db(attr_hash)
       sql = ("SELECT * FROM dogs where id = ?")
       new_dog = DB[:conn].execute(sql, attr_hash[0])
       new_dog_data = new_dog[0]
