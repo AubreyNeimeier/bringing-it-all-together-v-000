@@ -71,6 +71,13 @@ attr_accessor :name, :breed, :id
     end
 
     def new_from_db(attr_hash)
+      sql = ("SELECT * FROM dogs where id = ?")
+      new_dog = DB[:conn].execute(sql, attr_hash[0])
+      new_dog_data = new_dog[0]
+      new_dog_hash = {id: new_dog_data[0], name: new_dog_data[1], breed: new_dog_data[2]}
+      #binding.pry
+      new_dog = Dog.new(new_dog_hash)
+    end
 
 
 end
