@@ -82,7 +82,7 @@ attr_accessor :name, :breed, :id
         new_dog_hash = {id: result[0], name: result[1], breed: result[2]}
         new_dog_obj = Dog.new(new_dog_hash)
       else
-        new_dog_obj = self.create(name: name, breed: breed)
+        new_dog_obj = self.create(attr_hash)
       end
     end
 
