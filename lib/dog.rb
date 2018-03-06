@@ -70,5 +70,7 @@ attr_accessor :name, :breed, :id
       new_dog = Dog.new(new_dog_hash)
     end
 
+    def new_from_db(attr_hash)
+
 
 end
