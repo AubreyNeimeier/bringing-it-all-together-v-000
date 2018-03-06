@@ -61,8 +61,8 @@ attr_accessor :name, :breed, :id
     end
 
     def self.find_by_name(name_to_find)
-      sql = ("SELECT * FROM dogs WHERE id = ?")
-      new_dog = DB[:conn].execute(sql, id_num)
+      sql = ("SELECT * FROM dogs WHERE name = ?")
+      new_dog = DB[:conn].execute(sql, name_to_find)
 
       new_dog_data = new_dog[0]
       new_dog_hash = {id: new_dog_data[0], name: new_dog_data[1], breed: new_dog_data[2]}
