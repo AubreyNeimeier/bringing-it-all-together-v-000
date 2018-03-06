@@ -75,7 +75,7 @@ attr_accessor :name, :breed, :id
       #binding.pry
       #new_dog = DB[:conn].execute(sql, attr_hash[0])
         new_dog_hash = {id: attr_array[0], name: attr_array[1], breed: attr_array[2]}
-      #binding.pry
+      binding.pry
       new_dog = Dog.new(new_dog_hash)
     end
 
