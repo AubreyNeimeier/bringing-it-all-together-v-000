@@ -75,5 +75,7 @@ attr_accessor :name, :breed, :id
       new_dog = Dog.new(new_dog_hash)
     end
 
+    def self.find_or_create_by
+    end
 
 end
