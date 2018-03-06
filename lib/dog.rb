@@ -60,7 +60,15 @@ attr_accessor :name, :breed, :id
       new_dog = Dog.new(new_dog_hash)
     end
 
-    #def
+    def self.find_by_or_create_by(name:, breed:)
+      sql = ("SELECT * FROM dogs WHERE id = ?")
+      new_dog = DB[:conn].execute(sql, id_num)
+
+      new_dog_data = new_dog[0]
+      new_dog_hash = {id: new_dog_data[0], name: new_dog_data[1], breed: new_dog_data[2]}
+      #binding.pry
+      new_dog = Dog.new(new_dog_hash)
+    end
 
 
 end
