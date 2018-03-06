@@ -78,7 +78,7 @@ attr_accessor :name, :breed, :id
     def self.find_or_create_by(attr_hash)
       sql = ("SELECT * FROM dogs WHERE name = ? AND breed = ?")
       result = DB[:conn].execute(sql, attr_hash[:name], attr_hash[:breed])
-      binding.pry
+      #binding.pry
       if !result.empty?
         new_dog_hash = {id: result[0], name: result[1], breed: result[2]}
         new_dog_obj = Dog.new(new_dog_hash)
