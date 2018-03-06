@@ -85,7 +85,6 @@ attr_accessor :name, :breed, :id
         dog = Dog.create(attr_hash)
       end
       dog
-      binding.pry
     end
 
 end
