@@ -80,7 +80,9 @@ attr_accessor :name, :breed, :id
       result = DB[:conn].execute(sql, name:, breed:)
       if !result.empty?
         new_dog_hash = {id: result[0], name: result[1], breed: result[2]}
-        new_dog_obj = Dog.new(result)
+        new_dog_obj = Dog.new(new_dog_hash)
+      else
+        result.save
     end
 
 end
